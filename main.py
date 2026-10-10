@@ -75,9 +75,11 @@ price estimates and energy usages estimates (table format), and suggestions in a
 
 """
 
-def llm_response(prompt, image_path=None):
+def llm_response(prompt, image_path=None, image_bytes=None):
     user_msg = {"role": "user", "content": f"{delimiter}{prompt}{delimiter}"}
-    if image_path:
+    if image_bytes is not None:
+        user_msg["images"] = [image_bytes]
+    elif image_path:
         user_msg["images"] = [image_path]
 
     response = client.chat(
@@ -90,7 +92,8 @@ def llm_response(prompt, image_path=None):
     )
     return response.message.content
 
-prompt = "Identify all appliances and estimate energy usage based on the following image."
-response = llm_response(prompt, image_path="Samples/kitchen.jpg") 
-print(response)
+if __name__ == "__main__":
+    prompt = "Identify all appliances and estimate energy usage based on the following image."
+    response = llm_response(prompt, image_path="Samples/kitchen.jpg")
+    print(response)
 
