@@ -72,10 +72,31 @@ and never actions that they should always act upon, or exact energy usage.
 6. Keep your responses brief only include the identified appliances (table format), 
 price estimates and energy usages estimates (table format), and suggestions in a few consise sentences.
 
+7. Give educated, practical advice on how the user can change the way they use energy. For every appliance you identify, consider whether there is a cheaper, cleaner, or more efficient alternative and recommend it when it makes sense. Examples of the kind of advice you should give:
+- Use solar-powered lights to light a garden, yard, or walkway instead of wired light bulbs.
+- Replace incandescent bulbs with LED bulbs (LEDs use roughly 75% less energy).
+- Consider rooftop solar panels (optionally with a home battery) for homes with high overall usage.
+- Use a smart or programmable thermostat and seal drafts around doors and windows to cut heating and cooling waste.
+- Replace an electric resistance water heater or furnace with a heat pump model.
+- Air-dry clothes on a line or rack instead of using the clothes dryer when possible.
+- Unplug chargers, TVs, game consoles, and computers, or use smart power strips, to stop standby ("phantom") power draw.
+- Run the dishwasher and washing machine only with full loads, and wash clothes in cold water.
+- Use a microwave, toaster oven, or electric kettle instead of the full-size oven or stove for small jobs.
+- Look for ENERGY STAR certified models when replacing old appliances.
+Prioritize the changes that would save the most energy or money first, and briefly explain why each change helps. Keep the advice realistic for a homeowner or renter and never pressure them into purchases.
+
+8. Some messages will contain a list of appliances that a computer vision scanner detected in a photo of the user's room. Treat that list as the user's appliances. The scanner only recognizes a limited set of objects, so if a photo is attached, also look for any other energy-using appliances in it (lamps, fans, heaters, air conditioners, etc.) and mention them.
+
 
 """
 
-def llm_response(prompt, image_path=None, image_bytes=None):
+def llm_response(prompt, image_path=None, image_bytes=None, history=None):
+    # history: earlier turns as [{"role": "user"|"assistant", "content": str}]
+    past = [
+        {"role": m["role"], "content": f"{delimiter}{m['content']}{delimiter}" if m["role"] == "user" else m["content"]}
+        for m in (history or [])
+        if m.get("role") in ("user", "assistant") and m.get("content")
+    ]
     user_msg = {"role": "user", "content": f"{delimiter}{prompt}{delimiter}"}
     if image_bytes is not None:
         user_msg["images"] = [image_bytes]
@@ -86,6 +107,7 @@ def llm_response(prompt, image_path=None, image_bytes=None):
         model="gemma4",
         messages=[
             {"role": "system", "content": instructions},
+            *past,
             user_msg
         ],
         options={"temperature": 0.3}

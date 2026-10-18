@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -18,7 +20,16 @@ def chat():
     image_bytes = image_file.read() if image_file else None
 
     try:
-        reply = llm_response(message or "Identify all appliances and estimate energy usage based on the following image.", image_bytes=image_bytes)
+        history = json.loads(request.form.get("history", "[]"))
+    except json.JSONDecodeError:
+        history = []
+
+    try:
+        reply = llm_response(
+            message or "Identify all appliances and estimate energy usage based on the following image.",
+            image_bytes=image_bytes,
+            history=history if isinstance(history, list) else [],
+        )
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
 

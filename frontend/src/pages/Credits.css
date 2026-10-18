@@ -1,0 +1,73 @@
+.credits {
+  flex: 1;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem;
+  text-align: center;
+}
+
+.credits h1 {
+  margin: 0 0 0.4rem;
+  font-size: 2rem;
+}
+
+.credits-intro {
+  color: var(--muted);
+  margin: 0 0 2.5rem;
+}
+
+.contributors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.contributor {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #05111f;
+  background: linear-gradient(135deg, var(--sun), var(--accent));
+}
+
+.contributor h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.contributor .role {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.contributor p {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.built-with {
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .contributors {
+    grid-template-columns: 1fr;
+  }
+}
