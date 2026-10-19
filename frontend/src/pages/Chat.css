@@ -1,6 +1,6 @@
 .chat-page {
-  --user-bubble: #1a3150;
-  --assistant-bubble: #18202d;
+  --user-bubble: #d6f5e7;
+  --assistant-bubble: #f3fbf7;
   display: flex;
   flex-direction: column;
   height: calc(100svh - var(--nav-h));
@@ -75,7 +75,7 @@
 
 .message.error {
   border-color: var(--error);
-  color: #ffb4b6;
+  color: #b4232a;
 }
 
 .message-image {
@@ -122,11 +122,11 @@
 }
 
 .message-text th {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(18, 51, 42, 0.05);
 }
 
 .message-text code {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(18, 51, 42, 0.07);
   padding: 0.1rem 0.3rem;
   border-radius: 4px;
 }
@@ -209,7 +209,7 @@
 
 .send-button {
   background: var(--accent);
-  color: #05111f;
+  color: var(--on-accent);
   border: none;
   border-radius: 10px;
   padding: 0.65rem 1.1rem;

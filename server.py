@@ -1,12 +1,25 @@
 import json
+from pathlib import Path
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
 from main import llm_response
 
-app = Flask(__name__)
+FRONTEND_DIST = Path(__file__).parent / "frontend" / "dist"
+
+app = Flask(__name__, static_folder=None)
 CORS(app)
+
+
+@app.get("/")
+@app.get("/<path:path>")
+def frontend(path="index.html"):
+    if not FRONTEND_DIST.exists():
+        return "Frontend not built. Run `npm run build` in frontend/.", 404
+    if not (FRONTEND_DIST / path).is_file():
+        path = "index.html"
+    return send_from_directory(FRONTEND_DIST, path)
 
 
 @app.post("/api/chat")

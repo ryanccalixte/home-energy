@@ -81,8 +81,8 @@ function SolarScene() {
           <stop offset="100%" stopColor="#ffc94a" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="panelFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#2a5a9e" />
-          <stop offset="100%" stopColor="#173661" />
+          <stop offset="0%" stopColor="#2a8c6e" />
+          <stop offset="100%" stopColor="#175c48" />
         </linearGradient>
         <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#fff" stopOpacity="0" />
@@ -95,11 +95,11 @@ function SolarScene() {
       </defs>
 
       {/* Clouds */}
-      <g className="cloud-a" fill="#ffffff" opacity="0.12">
+      <g className="cloud-a" fill="#ffffff" opacity="0.95">
         <ellipse cx="120" cy="70" rx="46" ry="16" />
         <ellipse cx="150" cy="60" rx="30" ry="16" />
       </g>
-      <g className="cloud-b" fill="#ffffff" opacity="0.08">
+      <g className="cloud-b" fill="#ffffff" opacity="0.8">
         <ellipse cx="300" cy="120" rx="40" ry="13" />
         <ellipse cx="324" cy="111" rx="24" ry="13" />
       </g>
@@ -121,8 +121,8 @@ function SolarScene() {
       </g>
 
       {/* Ground */}
-      <path d="M0 360 Q 300 330 600 360 L600 420 L0 420 Z" fill="#163323" />
-      <path d="M0 380 Q 300 352 600 384 L600 420 L0 420 Z" fill="#1d4430" />
+      <path d="M0 360 Q 300 330 600 360 L600 420 L0 420 Z" fill="#a8e6c9" />
+      <path d="M0 380 Q 300 352 600 384 L600 420 L0 420 Z" fill="#7fd6ae" />
 
       {/* Panel stand */}
       <g stroke="#6b7c74" strokeWidth="5" strokeLinecap="round">
@@ -134,7 +134,7 @@ function SolarScene() {
       <g transform="translate(78 200) skewX(-18)">
         <rect x="-4" y="-4" width="208" height="122" rx="6" fill="#c9d3cf" />
         <rect x="0" y="0" width="200" height="114" rx="4" fill="url(#panelFill)" />
-        <g stroke="#9fc1ee" strokeOpacity="0.45" strokeWidth="1.5">
+        <g stroke="#bff0dc" strokeOpacity="0.45" strokeWidth="1.5">
           {[50, 100, 150].map((x) => <line key={x} x1={x} y1="0" x2={x} y2="114" />)}
           {[38, 76].map((y) => <line key={y} x1="0" y1={y} x2="200" y2={y} />)}
         </g>
@@ -144,9 +144,9 @@ function SolarScene() {
       </g>
 
       {/* Wire + energy pulses */}
-      <path className="wire" d={wire} fill="none" stroke="#4da3ff" strokeWidth="3" strokeLinecap="round" />
+      <path className="wire" d={wire} fill="none" stroke="#3fc792" strokeWidth="3" strokeLinecap="round" />
       {[0, 0.6, 1.2].map((begin) => (
-        <circle key={begin} r="5" fill="#b8dcff" className="pulse">
+        <circle key={begin} r="5" fill="#d6f5e7" className="pulse">
           <animateMotion dur="1.8s" repeatCount="indefinite" begin={`${begin}s`} path={wire} />
         </circle>
       ))}
