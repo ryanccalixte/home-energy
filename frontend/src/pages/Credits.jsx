@@ -1,18 +1,20 @@
 import './Credits.css'
+import ryanImage from '../assets/ryan.jpg'
 
-// Fill in your team's details here.
 const CONTRIBUTORS = [
   {
-    name: 'Contributor One',
-    role: 'Role (e.g. Frontend Developer)',
-    contribution: 'Short description of what this person built or worked on.',
-    github: 'https://github.com/',
+    name: 'Ryan Calixte',
+    role: 'Computer Vision & Machine Learning Developer',
+    contribution: 'Designed and implemented computer vision algorithms; Designed AI agent prompt architecture.',
+    github: 'https://github.com/ryanccalixte',
+    image: ryanImage,
   },
   {
-    name: 'Contributor Two',
-    role: 'Role (e.g. Backend & AI Developer)',
-    contribution: 'Short description of what this person built or worked on.',
+    name: 'Adrian Garcia',
+    role: 'Computer Vision & Data Analyst',
+    contribution: 'Compared and tested different computer vision models for object detection and tracking; Implemented data analysis pipelines for the AI Agent',
     github: 'https://github.com/',
+    image: ''
   },
 ]
 
@@ -28,12 +30,11 @@ function Credits() {
   return (
     <main className="credits">
       <h1>Credits</h1>
-      <p className="credits-intro">The people behind Home Energy.</p>
 
       <div className="contributors">
         {CONTRIBUTORS.map((c) => (
           <article key={c.name} className="contributor">
-            <div className="avatar" aria-hidden="true">{initials(c.name)}</div>
+            <img className="avatar" src={c.image} alt={c.name} />
             <h2>{c.name}</h2>
             <p className="role">{c.role}</p>
             <p>{c.contribution}</p>
