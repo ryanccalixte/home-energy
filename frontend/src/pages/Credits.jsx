@@ -1,6 +1,6 @@
 import './Credits.css'
 import ryanImage from '../assets/ryan.png'
-
+import adrianImage from '../assets/adrian.jpg'
 const CONTRIBUTORS = [
   {
     name: 'Ryan Calixte',
@@ -14,7 +14,7 @@ const CONTRIBUTORS = [
     role: 'Computer Vision & Data Analyst',
     contribution: 'Compared and tested different computer vision models for object detection and tracking; Implemented data analysis pipelines for the AI Agent',
     github: 'https://github.com/',
-    image: ''
+    image: adrianImage
   },
 ]
 

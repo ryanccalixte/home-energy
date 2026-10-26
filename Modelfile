@@ -1,4 +1,4 @@
-FROM gemma3
+FROM gemma4
 
 PARAMETER temperature 0.3
 
