@@ -13,7 +13,7 @@ const CONTRIBUTORS = [
     name: 'Adrian Garcia',
     role: 'Computer Vision & Data Analyst',
     contribution: 'Compared and tested different computer vision models for object detection and tracking; Implemented data analysis pipelines for the AI Agent',
-    github: 'https://github.com/',
+    github: 'https://github.com/concepts5k',
     image: adrianImage
   },
 ]
