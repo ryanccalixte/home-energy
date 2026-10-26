@@ -1,19 +1,21 @@
 :root {
-  --bg: #0b1018;
-  --panel: #111927;
-  --panel-2: #162133;
-  --border: #22304a;
-  --text: #e8eef7;
-  --muted: #93a1b8;
-  --accent: #4da3ff;
-  --accent-dark: #2f7fd8;
+  --bg: #ffffff;
+  --panel: #f3fbf7;
+  --panel-2: #e6f7ef;
+  --border: #cdeadd;
+  --text: #12332a;
+  --muted: #5a7a70;
+  --accent: #5fd9a8;
+  --accent-dark: #3fc792;
+  --accent-text: #0f8060;
+  --on-accent: #0b2e22;
   --sun: #ffc94a;
-  --sky: #7cc4ff;
-  --error: #e5484d;
+  --sky: #a8ecd0;
+  --error: #d93a40;
   --nav-h: 60px;
   --font-display: "Schibsted Grotesk", system-ui, sans-serif;
   --font-body: "Albert Sans", system-ui, sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -46,7 +48,7 @@ input {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .app-shell {
@@ -81,7 +83,7 @@ a {
 
 .btn-primary {
   background: var(--accent);
-  color: #05111f;
+  color: var(--on-accent);
 }
 
 .btn-primary:hover:not(:disabled) {

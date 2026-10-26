@@ -115,14 +115,14 @@ function RoomScanner({ onSend, onClose, busy }) {
       for (const p of found) {
         const [x, y, w, h] = p.bbox
         const label = `${APPLIANCES[p.class].name} ${Math.round(p.score * 100)}%`
-        ctx.strokeStyle = '#4da3ff'
+        ctx.strokeStyle = '#5fd9a8'
         ctx.lineWidth = lineWidth
         ctx.strokeRect(x, y, w, h)
         const textW = ctx.measureText(label).width + 10
         const labelY = y > fontSize + 8 ? y - fontSize - 8 : y
-        ctx.fillStyle = '#4da3ff'
+        ctx.fillStyle = '#5fd9a8'
         ctx.fillRect(x - lineWidth / 2, labelY, textW, fontSize + 8)
-        ctx.fillStyle = '#05111f'
+        ctx.fillStyle = '#0b2e22'
         ctx.fillText(label, x + 5, labelY + 4)
       }
       setAnnotated(canvas.toDataURL('image/jpeg', 0.85))

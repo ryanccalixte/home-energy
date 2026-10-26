@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm'
 import RoomScanner from '../components/RoomScanner.jsx'
 import './Chat.css'
 
-const API_URL = 'http://localhost:5000/api/chat'
+const API_URL = '/api/chat'
 
 function Chat() {
   const [messages, setMessages] = useState([])

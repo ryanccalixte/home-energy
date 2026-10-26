@@ -8,7 +8,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 0.75rem;
 }
 
@@ -22,9 +22,9 @@
   padding: 3rem clamp(1rem, 5vw, 4rem);
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 85% 10%, rgba(255, 201, 74, 0.18), transparent 55%),
-    radial-gradient(ellipse at 10% 90%, rgba(77, 163, 255, 0.14), transparent 50%),
-    linear-gradient(180deg, #0d1a24 0%, var(--bg) 100%);
+    radial-gradient(ellipse at 85% 10%, rgba(255, 201, 74, 0.2), transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(95, 217, 168, 0.22), transparent 50%),
+    linear-gradient(180deg, #e3f7ee 0%, var(--bg) 100%);
 }
 
 .hero-text {
@@ -39,7 +39,7 @@
 }
 
 .highlight {
-  background: linear-gradient(90deg, var(--sun), #ff9f43);
+  background: linear-gradient(90deg, var(--accent-text), #2fb585);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -66,7 +66,7 @@
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 20px 40px rgba(18, 51, 42, 0.12));
 }
 
 .sun-rays {
@@ -93,7 +93,7 @@
 }
 
 .pulse {
-  filter: drop-shadow(0 0 6px #4da3ff);
+  filter: drop-shadow(0 0 6px #5fd9a8);
 }
 
 .window {
@@ -197,7 +197,7 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .virtue p {
@@ -314,7 +314,7 @@
 }
 
 .leak-fix {
-  color: var(--accent);
+  color: var(--accent-text);
   font-size: 0.9rem;
   font-weight: 600;
   text-align: right;
@@ -373,7 +373,7 @@
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--accent);
-  color: var(--accent);
+  color: var(--accent-text);
   font-family: var(--font-display);
   font-weight: 700;
 }
@@ -411,23 +411,23 @@
 }
 
 .cta-band h2 {
-  color: #05111f;
+  color: var(--on-accent);
   margin-bottom: 0.75rem;
 }
 
 .cta-band p {
   margin: 0 0 1.75rem;
   font-size: 1.05rem;
-  color: rgba(5, 17, 31, 0.75);
+  color: rgba(11, 46, 34, 0.75);
 }
 
 .btn-light {
-  background: #05111f;
+  background: var(--on-accent);
   color: #fff;
 }
 
 .btn-light:hover {
-  background: #13233d;
+  background: #164a39;
 }
 
 .home-footer {
