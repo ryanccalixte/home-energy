@@ -1,5 +1,5 @@
 import './Credits.css'
-import ryanImage from '../assets/ryan.jpg'
+import ryanImage from '../assets/ryan.png'
 
 const CONTRIBUTORS = [
   {
